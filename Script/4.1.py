@@ -15,3 +15,4 @@ while True:
         print("실근은 {0:.6f} 입니다.".format(r1))
     else:
         print("이 방정식은 실근이 존재하지 않습니다.")
+

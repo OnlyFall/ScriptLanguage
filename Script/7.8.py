@@ -1,4 +1,5 @@
 from datetime import datetime
+import time
 
 class StopWatch:
     def __init__(self, startTime=0, endTime=0):
@@ -19,8 +20,10 @@ class StopWatch:
 total = 0
 k = StopWatch()
 k.start()
-for i in range(1000000):
+for i in range(10):
     total += i
+    time.sleep(1)
+
 k.stop()
 print(total)
 k.getElapsedTime()

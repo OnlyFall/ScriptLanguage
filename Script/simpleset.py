@@ -1,0 +1,33 @@
+from functools import *
+
+def intersect(*ar):
+    return reduce(__intersectSC, ar)  #가변길이 인자다!
+
+def __intersectSC(listX, listY):
+    setList = []
+
+    for x in listX:
+        if x in listY:
+            setList.append(x)
+    return setList
+
+
+def difference(*ar):
+    setList = []
+    intersectSet = intersect(*ar)
+    unionSet = union(*ar)
+
+    for x in unionSet:
+        if not x in intersectSet:
+            setList.append(x)
+
+    return setList
+
+def union(*ar):
+    setList = []
+
+    for item in ar:
+        for x in item:
+            if not x in setList:
+                setList.append(x)
+    return setList
